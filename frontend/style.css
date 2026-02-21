@@ -1,0 +1,132 @@
+/* style.css - igloo-inspired minimal */
+:root{
+  --bg:#071028;
+  --muted:#bcd7ff;
+  --accent1:#6a5af9;
+  --accent2:#00e5ff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#eaf4ff}
+.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:18px;align-items:center;padding:10px 18px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+.nav .logo{font-weight:800}
+.nav .nav-links a{color:#cfe9ff;margin-left:12px;text-decoration:none;font-weight:600}
+.hero{position:relative;min-height:520px;padding:80px 36px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#vanta-bg{position:absolute;inset:0;z-index:0}
+.hero-inner{position:relative;z-index:2;display:flex;gap:36px;max-width:1200px;width:100%;align-items:center}
+.hero-left{flex:1}
+.hero-right{flex:1;display:flex;align-items:center;justify-content:center}
+.small{color:var(--muted);font-weight:600;margin-bottom:8px}
+h1{font-size:46px;margin:0;line-height:1.02;background:linear-gradient(90deg,#9be5ff,#b39bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.lead{color:#dbeeff;opacity:0.95;margin-top:14px;max-width:520px}
+.cta-row{margin-top:20px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),#8767ff);color:white;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04)}
+.metrics{margin-top:20px;display:flex;gap:12px}
+.metric{background:rgba(255,255,255,0.02);padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.metric-value{font-weight:800;font-size:22px}
+.section{padding:60px 24px}
+.container{max-width:1200px;margin:0 auto;display:flex;gap:24px}
+.col-left{flex:0.45}
+.col-right{flex:0.55}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+.form-row{margin-top:12px}
+.form-row label{display:block;color:var(--muted);margin-bottom:6px}
+.form-row input[type=number]{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff}
+.result-card{margin-top:12px;padding:12px;background:rgba(255,255,255,0.02);border-radius:10px}
+.pred-species{font-weight:800;font-size:20px}
+.pred-probs{margin-top:8px}
+.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005))}
+.muted{color:var(--muted)}
+.footer{padding:36px;text-align:center;color:#aebfe6}
+@media (max-width:900px){.container{flex-direction:column}.col-left,.col-right{flex:1}}
+
+
+/* ── ABOUT ── */
+.about-wrap {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 20px;
+}
+
+.about-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-icon-box {
+  position: relative;
+  font-size: 6rem;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.03);
+}
+
+.about-glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(99,179,237,0.2), transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #63b3ed;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  color: #a0aec0;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.about-divider {
+  width: 50px;
+  height: 2px;
+  background: #63b3ed;
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+.about-credit {
+  color: #718096 !important;
+  font-size: 0.9rem !important;
+}
+
+.about-credit strong {
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .about-wrap {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .about-divider { margin: 24px auto; }
+}

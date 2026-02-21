@@ -1,0 +1,17 @@
+# Dockerfile
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY requirements.txt /app/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# copy backend artifacts and model files (you must include them before building)
+COPY api.py /app/
+COPY iris_model.joblib /app/
+COPY iris_scaler.joblib /app/
+COPY iris_label_encoder.joblib /app/
+COPY Iris.csv /app/
+
+EXPOSE 8000
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]

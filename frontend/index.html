@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iris — Visual AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+  <!-- Vanta (for hero animated background) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/tengbao/vanta@latest/dist/vanta.net.min.js"></script>
+  <!-- Lottie for micro-animations -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+  <div class="nav">
+    <div class="logo">Iris Studio</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#predict">Predict</a>
+      <a href="#visual">Visuals</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+
+  <section id="home" class="hero">
+    <div id="vanta-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="small">Data • Visuals • Prediction</div>
+        <h1>Beautiful 3D ML exploration for Iris</h1>
+        <p class="lead">Interactive predictions, animated visuals and elegant design — production-ready and student-friendly.</p>
+        <div class="cta-row">
+          <a class="btn" href="#predict">Try Demo</a>
+          <a class="btn ghost" href="#visual">Explore Visuals</a>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-value" id="hero-pct">83%</div>
+            <div class="metric-label">Demo Confidence</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" loop autoplay style="width:320px;height:320px;"></lottie-player>
+      </div>
+    </div>
+  </section>
+
+  <section id="predict" class="section">
+    <div class="container">
+      <div class="col-left">
+        <div class="card">
+          <h3>Predict Iris Species</h3>
+          <div class="form-row">
+            <label>Sepal Length (cm)</label>
+            <input id="sepal_length" type="number" step="0.1" value="5.1" />
+          </div>
+          <div class="form-row">
+            <label>Sepal Width (cm)</label>
+            <input id="sepal_width" type="number" step="0.1" value="3.5" />
+          </div>
+          <div class="form-row">
+            <label>Petal Length (cm)</label>
+            <input id="petal_length" type="number" step="0.1" value="1.4" />
+          </div>
+          <div class="form-row">
+            <label>Petal Width (cm)</label>
+            <input id="petal_width" type="number" step="0.1" value="0.2" />
+          </div>
+          <div class="form-row">
+            <button id="predictBtn" class="btn">Predict</button>
+          </div>
+          <div id="predictionResult" class="result-card" hidden>
+            <div id="predSpecies" class="pred-species"></div>
+            <div id="predProbs" class="pred-probs"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <div class="card">
+          <h3>Live 3D Cluster</h3>
+          <div id="plot3d" style="height:520px;"></div>
+          <div class="controls">
+            <label>Auto-rotate</label>
+            <input id="autorotate" type="checkbox" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visual" class="section alt">
+    <div class="container">
+      <h2>Visual Exploration</h2>
+      <p class="muted">Drag to rotate, zoom to explore, and predict right from the page.</p>
+      <div id="plot2" style="height:520px;"></div>
+    </div>
+  </section>
+
+  <!-- <section id="about" class="section">
+    <div class="container">
+      <h2>About/This Project</h2>
+      <p class="muted">This demo uses a trained model served via a FastAPI endpoint. Place the joblib model, scaler and encoder files on the backend to enable predictions.</p>
+    </div>
+  </section> -->
+  <!-- <section id="about" class="section">
+  <div class="container">
+    <h2>About This Project</h2>
+    <p class="muted">
+      This interactive Iris Species Classifier is built using a machine learning 
+      model trained on the classic Iris dataset. The model is served via a 
+      <strong>FastAPI</strong> backend and visualized through a sleek static 
+      frontend with real-time <strong>3D scatter plots</strong> powered by Plotly.
+    </p>
+    <br>
+    <p class="muted">
+      Simply enter your flower measurements, hit <strong>Predict</strong>, and 
+      watch the model classify the species — <em>Iris-setosa</em>, 
+      <em>Iris-versicolor</em>, or <em>Iris-virginica</em> — with live 
+      probability scores and 3D visualization highlighting your input.
+    </p>
+    <br>
+    <p class="muted">
+      Built with ❤️ by <strong>Yathik</strong> | 
+      <strong>RyStudios</strong> — where data meets design.
+    </p>
+  </div>
+</section> -->
+
+<section id="about" class="section">
+  <div class="container about-wrap">
+    
+    <!-- Left: Icon Side -->
+    <div class="about-visual">
+      <div class="about-icon-box">
+        🌸
+        <div class="about-glow"></div>
+      </div>
+    </div>
+
+    <!-- Right: Text Side -->
+    <div class="about-text">
+      <span class="about-tag">About</span>
+      <h2>Iris Visual AI</h2>
+      <p>
+        A machine learning app that predicts Iris species in real time using 
+        a <strong>FastAPI</strong> backend and interactive 
+        <strong>3D Plotly</strong> visualizations.
+      </p>
+      <div class="about-divider"></div>
+      <p class="about-credit">
+        Made by <strong>Yathik</strong> &nbsp;·&nbsp; <strong>RyStudios</strong>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- <footer class="footer">© Iris Studio — Built with FastAPI & static frontend</footer> -->
+   <footer class="footer">
+  <p>© 2025 <strong>RyStudios</strong> — Yathik. All rights reserved.</p>
+  <p class="muted" style="font-size:12px; margin-top:4px;">
+    Built with FastAPI, Plotly & a static frontend. 
+    Unauthorized reproduction is prohibited.
+  </p>
+</footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
