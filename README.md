@@ -3,33 +3,20 @@
 > Real-time Iris flower species classifier with interactive 3D visualization  
 > Built by **Yathik** · **RyStudios**
 
-
-
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi)
-
-
-
 
 ![Plotly](https://img.shields.io/badge/Plotly-3D%20Charts-3D4DB7?style=flat-square)
 
-
-
-
 ![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?style=flat-square&logo=vercel)
 
-
-
-
 ![Render](https://img.shields.io/badge/Backend-Render-46E3B7?style=flat-square)
-
-
 
 ---
 
 ## 🚀 Live Demo
 | Layer | URL |
 |-------|-----|
-| 🌐 Frontend | https://iris-visual-ai.vercel.app |
+| 🌐 Frontend | https://iris-visual-ai-frontend.vercel.app |
 | ⚙️ Backend API | https://iris-visual-ai-api.onrender.com |
 
 ---
